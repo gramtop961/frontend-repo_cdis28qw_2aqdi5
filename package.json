@@ -1,0 +1,22 @@
+{
+  "name": "flutter-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite --port 3000 --host",
+    "dev": "vite --port 3000 --host",
+    "build": "vite build",
+    "preview": "vite preview --port 3000 --host"
+  },
+  "dependencies": {
+    "@splinetool/react-spline": "1.0.0",
+    "@splinetool/runtime": "^1.10.91",
+    "@vitejs/plugin-react": "^4.2.1",
+    "framer-motion": "^7.10.0",
+    "lucide-react": "^0.263.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "vite": "^5.3.1"
+  }
+}
