@@ -1,7 +1,10 @@
 import React from 'react';
-import Spline from '@splinetool/react-spline';
+import SplineDefault, { Spline as SplineNamed } from '@splinetool/react-spline';
 import { motion } from 'framer-motion';
 import { ArrowRight, Download } from 'lucide-react';
+
+// Support both default and named exports from @splinetool/react-spline
+const Spline = SplineDefault ?? SplineNamed;
 
 const SkillPill = ({ label }) => (
   <span className="px-3 py-1 rounded-full bg-white/10 text-white/90 text-xs border border-white/10">
@@ -79,10 +82,16 @@ export default function Hero() {
 
         {/* 3D Spline column */}
         <div className="relative h-[60vh] sm:h-[70vh] lg:h-[75vh] w-full rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-b from-white/5 to-white/0">
-          <Spline
-            scene="https://prod.spline.design/EaQv24wazlheTQrd/scene.splinecode"
-            style={{ width: '100%', height: '100%' }}
-          />
+          {Spline ? (
+            <Spline
+              scene="https://prod.spline.design/EaQv24wazlheTQrd/scene.splinecode"
+              style={{ width: '100%', height: '100%' }}
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center text-white/60 text-sm">
+              Unable to load 3D scene
+            </div>
+          )}
           {/* Non-interfering gradient overlay so 3D remains interactive */}
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#0b0e14] to-transparent" />
         </div>
