@@ -12,11 +12,13 @@ const SkillPill = ({ label }) => (
 export default function Hero() {
   return (
     <section className="relative pt-24 sm:pt-28">
+      {/* Non-blocking ambient glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[1200px] h-[1200px] bg-[radial-gradient(closest-side,rgba(56,189,248,0.25),transparent)]" />
       </div>
 
       <div className="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-10 items-center">
+        {/* Text column */}
         <div className="relative z-10 space-y-6">
           <motion.h1
             initial={{ opacity: 0, y: 10 }}
@@ -75,11 +77,13 @@ export default function Hero() {
           </motion.div>
         </div>
 
+        {/* 3D Spline column */}
         <div className="relative h-[60vh] sm:h-[70vh] lg:h-[75vh] w-full rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-b from-white/5 to-white/0">
           <Spline
-            scene="https://prod.spline.design/VJLoxp84lCdVfdZu/scene.splinecode"
+            scene="https://prod.spline.design/EaQv24wazlheTQrd/scene.splinecode"
             style={{ width: '100%', height: '100%' }}
           />
+          {/* Non-interfering gradient overlay so 3D remains interactive */}
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#0b0e14] to-transparent" />
         </div>
       </div>
